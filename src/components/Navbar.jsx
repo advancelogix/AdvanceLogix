@@ -20,9 +20,9 @@ export default function Navbar() {
         AdvanceLogix
       </button>
       <ul className="flex space-x-6 text-gray-700 font-medium items-center">
-        <li><button onClick={() => handleNav("services")} className="hover:text-blue-600 transition-colors">Services</button></li>
-        <li><button onClick={() => handleNav("about")} className="hover:text-blue-600 transition-colors">About</button></li>
-        <li><button onClick={() => handleNav("contact")} className="hover:text-blue-600 transition-colors">Contact</button></li>
+        <li><button onClick={() => handleNav("services")} className="hover:text-blue-600 hover:underline transition cursor-pointer">Services</button></li>
+        <li><button onClick={() => handleNav("about")} className="hover:text-blue-600 hover:underline transition cursor-pointer">About</button></li>
+        <li><button onClick={() => handleNav("contact")} className="hover:text-blue-600 hover:underline transition cursor-pointer">Contact</button></li>
         <li>
           <button onClick={() => navigate("/login")} className="ml-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer">
             Log In
