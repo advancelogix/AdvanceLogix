@@ -1,6 +1,15 @@
 import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+  const section = localStorage.getItem("scrollTo");
+    if (section) {
+      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+      localStorage.removeItem("scrollTo");
+    }
+  }, []);
+
   return (
     <div>
       <Navbar />
