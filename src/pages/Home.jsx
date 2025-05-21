@@ -50,7 +50,7 @@ export default function Home() {
       <section id="contact" className="py-20 bg-white text-center">
         <h2 className="text-3xl font-semibold mb-6 text-gray-800">Contact Us</h2>
         <p className="text-gray-600 mb-6">Ready to modernize your IT infrastructure? Let’s talk.</p>
-        <a href="mailto:info@advancelogix.net" className="text-blue-600 font-medium text-lg hover:underline">info@advancelogix.com</a>
+        <a href="mailto:info@advancelogix.net" className="text-blue-600 font-medium text-lg hover:underline">info@advancelogix.net</a>
       </section>
 
       {/* Footer */}
