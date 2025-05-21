@@ -1,26 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { supabase } from "../supabaseClient"; // Make sure this is correctly configured
+import { useAuth } from "../context/AuthContext";
+import { supabase } from "../supabaseClient";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    // Get current user session
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user);
-    });
-
-    // Optional: Listen to auth changes
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user || null);
-    });
-
-    return () => {
-      listener?.subscription.unsubscribe();
-    };
-  }, []);
+  const { user, loading } = useAuth();
 
   const handleNav = (section) => {
     if (window.location.pathname !== "/") {
@@ -56,20 +40,16 @@ export default function Navbar() {
           <button onClick={() => handleNav("contact")} className="hover:text-blue-600 hover:underline transition cursor-pointer">Contact</button>
         </li>
         <li>
-          {user ? (
-            <button
-              onClick={handleLogout}
-              className="ml-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition cursor-pointer"
-            >
-              Log Out
-            </button>
-          ) : (
-            <button
-              onClick={() => navigate("/login")}
-              className="ml-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer"
-            >
-              Log In
-            </button>
+          {!loading && (
+            user ? (
+              <button onClick={handleLogout} className="ml-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition cursor-pointer">
+                Log Out
+              </button>
+            ) : (
+              <button onClick={() => navigate("/login")} className="ml-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition cursor-pointer">
+                Log In
+              </button>
+            )
           )}
         </li>
       </ul>

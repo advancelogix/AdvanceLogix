@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
+import { supabase } from "../supabaseClient";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -10,29 +11,18 @@ export default function Login() {
 const handleLogin = async (e) => {
   e.preventDefault();
 
-  try {
-    const response = await fetch("https://xfcbxwlcgemlutnxynii.supabase.co/functions/v1/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-    const data = await response.json();
-
-    if (response.ok) {
-      const { session, user } = data;
-      localStorage.setItem("access_token", session.access_token);
-      localStorage.setItem("refresh_token", session.refresh_token);
-      navigate("/dashboard");
-    } else {
-      alert(data.error || "Login failed");
-    }
-  } catch (err) {
-    console.error("Login error:", err);
-    alert("An unexpected error occurred.");
+  if (error) {
+    alert(error.message || "Login failed");
+    return;
   }
-};
 
+  navigate("/dashboard");
+};
 
   return (
     <div>
