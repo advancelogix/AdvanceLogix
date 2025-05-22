@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { supabase } from "../supabaseClient";
-import { Menu, X } from "lucide-react"; // install lucide-react if not already
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -44,6 +44,16 @@ export default function Navbar() {
           <li><button onClick={() => handleNav("services")} className="hover:text-blue-600 hover:underline">Services</button></li>
           <li><button onClick={() => handleNav("about")} className="hover:text-blue-600 hover:underline">About</button></li>
           <li><button onClick={() => handleNav("contact")} className="hover:text-blue-600 hover:underline">Contact</button></li>
+
+          {/* Dashboard button for logged-in users */}
+          {!loading && user && (
+            <li>
+              <button onClick={() => navigate("/dashboard")} className="hover:text-blue-600 hover:underline">
+                Dashboard
+              </button>
+            </li>
+          )}
+
           <li>
             {!loading && (
               user ? (
@@ -66,6 +76,14 @@ export default function Navbar() {
           <button onClick={() => handleNav("services")} className="block w-full text-left hover:text-blue-600">Services</button>
           <button onClick={() => handleNav("about")} className="block w-full text-left hover:text-blue-600">About</button>
           <button onClick={() => handleNav("contact")} className="block w-full text-left hover:text-blue-600">Contact</button>
+
+          {/* Dashboard button for logged-in users */}
+          {!loading && user && (
+            <button onClick={() => { setIsMenuOpen(false); navigate("/dashboard"); }} className="block w-full text-left hover:text-blue-600">
+              Dashboard
+            </button>
+          )}
+
           {!loading && (
             user ? (
               <button onClick={handleLogout} className="block w-full bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700">
