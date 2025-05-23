@@ -26,17 +26,17 @@ export default function Dashboard() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow">
+          <div className="bg-white/90 p-6 rounded-xl shadow">
             <h2 className="text-xl font-semibold text-gray-800">Projects</h2>
             <p className="text-gray-500">Track ongoing and completed projects.</p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
+          <div className="bg-white/90 p-6 rounded-xl shadow">
             <h2 className="text-xl font-semibold text-gray-800">Tickets</h2>
             <p className="text-gray-500">Monitor support tickets or technical tasks.</p>
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow">
+          <div className="bg-white/90 p-6 rounded-xl shadow">
             <h2 className="text-xl font-semibold text-gray-800">Reports</h2>
             <p className="text-gray-500">Review KPIs, analytics, and insights.</p>
           </div>

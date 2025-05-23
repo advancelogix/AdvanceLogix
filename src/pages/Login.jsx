@@ -29,7 +29,7 @@ const handleLogin = async (e) => {
     <Layout>
       <Navbar />
       <section className="min-h-screen flex items-center justify-center px-4">
-        <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-md">
+        <div className="max-w-md w-full bg-white/90 p-8 rounded-xl shadow-md">
           <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Log In to AdvanceLogix</h2>
           <form className="space-y-4" onSubmit={handleLogin}>
             <div>

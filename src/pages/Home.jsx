@@ -17,7 +17,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="py-20 text-center">
-        <div className="bg-white p-8 max-w-4xl mx-auto rounded-xl shadow">
+        <div className="bg-white/90 p-8 max-w-4xl mx-auto rounded-xl shadow">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Empowering Businesses with Smart IT Solutions
           </h1>
@@ -35,7 +35,7 @@ export default function Home() {
 
       {/* Services Section */}
       <section id="services" className="py-20 text-center">
-        <div className="bg-white max-w-6xl mx-auto p-8 rounded-xl shadow">
+        <div className="bg-white/90 max-w-6xl mx-auto p-8 rounded-xl shadow">
           <h2 className="text-3xl font-semibold mb-10 text-gray-800">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 border rounded-xl shadow hover:shadow-lg transition">
@@ -62,7 +62,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="py-20 text-center">
-        <div className="bg-white max-w-4xl mx-auto p-8 rounded-xl shadow">
+        <div className="bg-white/90 max-w-4xl mx-auto p-8 rounded-xl shadow">
           <h2 className="text-3xl font-semibold mb-6 text-gray-800">About AdvanceLogix</h2>
           <p className="text-gray-600">
             AdvanceLogix is a forward-thinking IT company committed to delivering innovative, efficient, and secure technology solutions. Our team of certified experts brings years of experience in helping businesses leverage IT to achieve operational excellence and digital transformation.
@@ -72,7 +72,7 @@ export default function Home() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 text-center">
-        <div className="bg-white max-w-2xl mx-auto p-8 rounded-xl shadow">
+        <div className="bg-white/90 max-w-2xl mx-auto p-8 rounded-xl shadow">
           <h2 className="text-3xl font-semibold mb-6 text-gray-800">Contact Us</h2>
           <p className="text-gray-600 mb-6">Ready to modernize your IT infrastructure? Let’s talk.</p>
           <a
